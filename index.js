@@ -34,9 +34,12 @@ controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'
   bot.reply(message, 'Hello.')
 })
 
-controller.on('dropdatbuild-bot',function(bot,message) {
-
-  // reply to slash command
-  bot.replyPublic(message,'Everyone can see the results of this slash command');
-
+controller.setupWebserver(3000, function(err, webserver) {
+    controller.createWebhookEndpoints(webserver);
 });
+
+controller.on('slash_command', function(bot, message) {
+    // check message.command
+    // and maybe message.text...
+    // use EITHER replyPrivate or replyPublic...
+    bot.replyPublic(message, 'This is a private reply to the ' + message.command + ' slash command!');
