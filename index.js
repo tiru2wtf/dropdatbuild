@@ -33,3 +33,10 @@ controller.on('bot_channel_join', function (bot, message) {
 controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
   bot.reply(message, 'Hello.')
 })
+
+controller.on('dropdatbuild-bot',function(bot,message) {
+
+  // reply to slash command
+  bot.replyPublic(message,'Everyone can see the results of this slash command');
+
+});
