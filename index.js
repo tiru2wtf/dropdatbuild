@@ -30,6 +30,6 @@ controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
 })
 
-controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
-  bot.reply(message, 'Hello nada, cadê a PLR?')
+controller.hears(['banheiro'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
+  bot.reply(message, '/cagar')
 })
